@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* Little Tracers palette — soft, joyful, high-contrast text */
+  --color-cream: #fff9f0;
+  --color-paper: #fffdf8;
+  --color-ink: #3d3357;
+  --color-ink-soft: #6b6288;
+
+  --color-sunny: #ffc93c;
+  --color-sunny-deep: #f5a623;
+  --color-coral: #ff7b6b;
+  --color-coral-deep: #e85d4e;
+  --color-teal: #2dd4bf;
+  --color-teal-deep: #14b8a6;
+  --color-violet: #8b5cf6;
+  --color-violet-deep: #7c3aed;
+  --color-leaf: #4ade80;
+  --color-leaf-deep: #22c55e;
+  --color-sky: #7dd3fc;
+  --color-sky-deep: #38bdf8;
+  --color-blossom: #f9a8d4;
+  --color-blossom-deep: #ec4899;
+
+  --font-display: var(--font-baloo), ui-rounded, "Comic Sans MS", cursive, sans-serif;
+
+  --radius-bubble: 1.75rem;
+
+  --animate-float: float 3.2s ease-in-out infinite;
+  --animate-wiggle: wiggle 1.6s ease-in-out infinite;
+  --animate-pop: pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+  @keyframes pop {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+}
+
+html,
+body {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Chunky, pressable button depth used across the app */
+.btn-chunky {
+  border-bottom-width: 5px;
+  transition: transform 0.1s ease, border-bottom-width 0.1s ease, margin-top 0.1s ease;
+}
+.btn-chunky:active {
+  border-bottom-width: 1px;
+  margin-top: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles for teacher worksheets */
+@media print {
+  body {
+    background: white;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-page {
+    page-break-after: always;
+  }
+}
