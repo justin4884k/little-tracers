@@ -1,0 +1,20 @@
+{
+  "name": "Little Tracers",
+  "short_name": "Tracers",
+  "description": "Free handwriting and tracing practice for Pre-K and Kindergarten.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fff7ed",
+  "theme_color": "#ff5b8a",
+  "categories": ["education", "kids"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
